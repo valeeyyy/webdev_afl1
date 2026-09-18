@@ -1,8 +1,11 @@
+i
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Books Table</title>
 </head>
+
 <body style="font-family: Arial, sans-serif; padding: 20px;">
 
     <h2 style="margin-bottom: 20px;">Books</h2>
@@ -26,12 +29,15 @@
                 <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Scribner</td>
                 <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Fiction</td>
                 <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">
-                    <button style="background-color: #ffc107; color: #000; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">Update</button>
-                    <button style="background-color: #dc3545; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; margin-left: 5px;">Delete</button>
+                    <button
+                        style="background-color: #ffc107; color: #000; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">Update</button>
+                    <button
+                        style="background-color: #dc3545; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; margin-left: 5px;">Delete</button>
                 </td>
             </tr>
         </tbody>
     </table>
 
 </body>
+
 </html>
