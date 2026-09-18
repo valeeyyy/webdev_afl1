@@ -4,74 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
 
-<body>
-    <div class="header text-center m-4">
-        <h1>List Anggota</h1>
-    </div>
-</body>
+<style>
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+</style>
 
-<div class="card text-left w-75 mx-auto">
-    <div class="card-header">
-        <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="true" href="#">Anggota</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Buku</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Peminjaman</a>
-            </li>
-        </ul>
-    </div>
-    <div class="card-body">
-        <table class="table table-dark table-striped">
+<body style="font-family: Arial, sans-serif;">
+    <nav
+        style="width: 100%; background-color: #f5f5f5; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+        <h2 style="color: black;">Library Management</h2>
+        <div>
+            <a href="#" style="color: black; text-decoration: none; margin-right: 35px;">Members</a>
+            <a href="#" style="color: black; text-decoration: none; margin-right: 35px;">Books</a>
+            <a href="#" style="color: black; text-decoration: none;">Borrowings</a>
+        </div>
+    </nav>
+
+
+    <div style="padding: 35px 40px;">
+        <h2 style="margin-bottom: 20px;">List of Members</h2>
+
+        <table style="width: 100%; border-collapse: collapse;">
             <thead>
-                <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">NIM</th>
-                    <th scope="col">Nama Lengkap</th>
-                    <th scope="col">No Telepon</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Action</th>
+                <tr style="background-color: #212529; color: white; text-align: left;">
+                    <th style="padding: 12px 15px;">No</th>
+                    <th style="padding: 12px 15px;">NIM</th>
+                    <th style="padding: 12px 15px;">Full Name</th>
+                    <th style="padding: 12px 15px;">Email</th>
+                    <th style="padding: 12px 15px;">Phone Number</th>
+                    <th style="padding: 12px 15px;">Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>1076012510035</td>
-                    <td>Marsha Valerie Wibowo</td>
-                    <td>08123456789</td>
-                    <td>marshavalerie@gmail.com</td>
-                    <td>
-                        <button class="btn btn-warning">Update</button>
-                        <button class="btn btn-danger">Delete</button>
+                <tr style="border-bottom: 1px solid #dee2e6;">
+                    <td style="padding: 15px">1</td>
+                    <td style="padding: 15px">1076012510035</td>
+                    <td style="padding: 15px">Marsha Valerie</td>
+                    <td style="padding: 15px">valerie@gmail.com</td>
+                    <td style="padding: 15px">08123456789</td>
+                    <td style="padding: 15px">
+                        <button
+                            style="background-color: #ffc107; color: #000; border: none; padding: 6px 12px; border-radius: 4px;">Update</button>
+                        <button
+                            style="background-color: #dc3545; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; margin-left: 5px;">Delete</button>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>1076012510029</td>
-                    <td>Christa Caitlyn Wonohadidjojo</td>
-                    <td>08987654321</td>
-                    <td>christacaitlyn@gmail.com</td>
-                    <td>
-                        <button class="btn btn-warning">Update</button>
-                        <button class="btn btn-danger">Delete</button>
+                <tr style="border-bottom: 1px solid #dee2e6;">
+                    <td style="padding: 15px">2</td>
+                    <td style="padding: 15px">1076012510029</td>
+                    <td style="padding: 15px">Christa Caitlyn</td>
+                    <td style="padding: 15px">christa@gmail.com</td>
+                    <td style="padding: 15px">08198765432</td>
+                    <td style="padding: 15px">
+                        <button
+                            style="background-color: #ffc107; color: #000; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">Update</button>
+                        <button
+                            style="background-color: #dc3545; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; margin-left: 5px;">Delete</button>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <div class="text-end mb-4">
-            <button class="btn btn-primary">Tambahkan Anggota</button>
-        </div>
     </div>
-</div>
-
-
-
+</body>
 
 </html>
