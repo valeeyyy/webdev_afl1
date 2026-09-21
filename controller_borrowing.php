@@ -14,21 +14,33 @@ $allMembers = getAllMembers();
 $allBooks = getAllBooks();
 
 if (!isset($_SESSION['borrowings'])) {
-    $borrowings = $_SESSION['borrowings'];
+    $_SESSION['borrowings'] = [];
+
+    if (isset($allMembers[0]) && isset($allBooks[1])) {
+        $_SESSION['borrowings'][] = new Borrowing($allMembers[0], $allBooks[1]);
+    }
+    if (isset($allMembers[1]) && isset($allBooks[0])) {
+        $_SESSION['borrowings'][] = new Borrowing($allMembers[1], $allBooks[0]);
+    }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['member_index']) && isset($_POST['book_index'])) {
     $memberIndex = $_POST['member_index'];
     $bookIndex = $_POST['book_index'];
 
-    $_SESSION['borrowings'][] = new Borrowing($allMembers[$memberIndex], $allBooks[$bookIndex]);
+    if (isset($allMembers[$memberIndex]) && isset($allBooks[$bookIndex])) {
+        $_SESSION['borrowings'][] = new Borrowing($allMembers[$memberIndex], $allBooks[$bookIndex]);
+    }
 
     header("Location: view_borrowing.php");
-        exit();
+    exit();
 }
 
-$borrowings = [
-    new Borrowing($allMembers[0], $allBooks[1]),
-    new Borrowing($allMembers[1], $allBooks[0])
-];
+if (isset($_GET['reset'])) {
+    unset($_SESSION['borrowings']);
+    header("Location: view_borrowing.php");
+    exit();
+}
+
+$borrowings = $_SESSION['borrowings'];
 ?>
