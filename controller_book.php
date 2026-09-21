@@ -1,7 +1,9 @@
 <?php
-include('model_book.php');
+include_once('model_book.php');
 
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 if (!isset($_SESSION['bookList'])) {
     $_SESSION['bookList'] = [

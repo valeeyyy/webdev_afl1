@@ -21,9 +21,9 @@
         <h2 style="color: black;">Library Management</h2>
         <div>
             <a href="view_member.php"
-                style="color: black; background-color: #cacccd; text-decoration: none; margin-right: 25px; padding: 10px 18px; border-radius: 6px; font-weight: bold">Members</a>
-            <a href="#" style="color: black; text-decoration: none; margin-right: 35px;">Books</a>
-            <a href="#" style="color: black; text-decoration: none;">Borrowings</a>
+                style="color: black; text-decoration: none; margin-right: 25px; font-weight: bold">Members</a>
+            <a href="view_book.php" style="color: black; text-decoration: none; margin-right: 35px;">Books</a>
+            <a href="view_borrowing.php" style="color: black; text-decoration: none;">Borrowings</a>
         </div>
     </nav>
 

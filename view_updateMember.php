@@ -24,16 +24,6 @@ if (isset($_GET["updateID"])) {
 </style>
 
 <body style="font-family: Arial, sans-serif;">
-    <nav
-        style="width: 100%; background-color: #f5f5f5; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-        <h2 style="color: black;">Library Management</h2>
-        <div>
-            <a href="#" style="color: black; text-decoration: none; margin-right: 35px;">Members</a>
-            <a href="#" style="color: black; text-decoration: none; margin-right: 35px;">Books</a>
-            <a href="#" style="color: black; text-decoration: none;">Borrowings</a>
-        </div>
-    </nav>
-
     <div style="padding: 35px 40px;">
         <h2 style="margin-bottom: 20px;">Update Member</h2>
         <form method="POST" action="controller_member.php">

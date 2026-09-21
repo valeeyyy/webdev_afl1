@@ -23,8 +23,8 @@
             <a href="view_member.php"
                 style="color: black; text-decoration: none; margin-right: 35px;">Members</a>
             <a href="view_book.php"
-                style="color: black; background-color: #cacccd; text-decoration: none; margin-right: 35px; padding: 10px 18px; border-radius: 6px; font-weight: bold">Books</a>
-            <a href="#" style="color: black; text-decoration: none;">Borrowings</a>
+                style="color: black; text-decoration: none; margin-right: 25px; font-weight: bold">Books</a>
+            <a href="view_borrowing.php" style="color: black; text-decoration: none;">Borrowings</a>
         </div>
     </nav>
 

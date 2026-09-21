@@ -1,6 +1,9 @@
 <?php
-include("model_member.php");
-session_start();
+include_once("model_member.php");
+
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 if (!isset($_SESSION['memberlist'])) {
     $_SESSION['memberlist'] = [
