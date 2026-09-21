@@ -17,6 +17,52 @@
         margin: 0;
         box-sizing: border-box;
     }
+
+    .form-container {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-label {
+            width: 100px;
+            font-size: 16px;
+            color: #000;
+        }
+
+        .form-select {
+            width: 250px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 2px solid gray;
+            outline: none;
+            appearance: none;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23333" d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .select-top {
+            border-bottom: none;
+        }
+
+        .btn-save {
+            margin-top: 20px;
+            color: black;
+            border: 2px solid #333;
+            padding: 10px 45px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
 </style>
 
 <body style="font-family: Arial, sans-serif;">
@@ -50,6 +96,37 @@
                 <?php } ?>
             </tbody>
         </table>
+
+        <div class="form-container">
+            <form method="POST" action="controller_borrowing.php" style="display: flex; flex-direction: column; align-items: center;">
+                
+                <div style="display: flex; flex-direction: column;">
+                    <!-- Dropdown Member -->
+                    <div class="form-group">
+                        <label class="form-label">Member</label>
+                        <select name="member_index" class="form-select select-top" required>
+                            <option value="" disabled selected>Select Member</option>
+                            <?php foreach ($allMembers as $index => $member) { ?>
+                                <option value="<?= $index ?>"><?= $member->getName() ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+                    <!-- Dropdown Book -->
+                    <div class="form-group">
+                        <label class="form-label">Book</label>
+                        <select name="book_index" class="form-select" required>
+                            <option value="" disabled selected>Select Book</option>
+                            <?php foreach ($allBooks as $index => $book) { ?>
+                                <option value="<?= $index ?>"><?= $book->getTitle() ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-save">SAVE</button>
+            </form>
+        </div>
     </div>
 </body>
 
