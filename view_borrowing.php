@@ -85,13 +85,20 @@
                 <tr style="background-color: #212529; color: white; text-align: left;">
                     <th style="padding: 12px 15px;">Member</th>
                     <th style="padding: 12px 15px;">Book</th>
+                    <th style="padding: 12px 15px;">Action</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($borrowings as $borrowing) { ?>
+                <?php foreach ($borrowings as $index => $borrowing) { ?>
                     <tr style="border-bottom: 1px solid #dee2e6;">
                         <td style="padding: 15px;"><?= $borrowing->getMember()->getName() ?></td>
                         <td style="padding: 15px;"><?= $borrowing->getBook()->getTitle() ?></td>
+                        <td style="padding: 15px;">
+                            <a href="view_updateBorrowing.php?updateID=<?= $index ?>"
+                                style="background-color: #ffc107; color: #000; text-decoration: none; padding: 10px 20px; border-radius: 6px; display: inline-block;">Update</a>
+                            <a href="controller_borrowing.php?deleteBorrowingID=<?= $index ?>"
+                                style="background-color: #dc3545; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 6px; display: inline-block; margin-left: 5px;">Delete</a>
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>
@@ -101,7 +108,6 @@
             <form method="POST" action="controller_borrowing.php" style="display: flex; flex-direction: column; align-items: center;">
                 
                 <div style="display: flex; flex-direction: column;">
-                    <!-- Dropdown Member -->
                     <div class="form-group">
                         <label class="form-label">Member</label>
                         <select name="member_index" class="form-select select-top" required>
@@ -112,7 +118,6 @@
                         </select>
                     </div>
 
-                    <!-- Dropdown Book -->
                     <div class="form-group">
                         <label class="form-label">Book</label>
                         <select name="book_index" class="form-select" required>
@@ -124,7 +129,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn-save">SAVE</button>
+                <button type="submit" name="add" class="btn-save">SAVE</button>
             </form>
         </div>
     </div>
