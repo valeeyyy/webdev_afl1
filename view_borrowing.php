@@ -1,7 +1,7 @@
-<?php 
-    include_once("controller_borrowing.php"); 
-    include_once("controller_book.php");
-    include_once("controller_member.php");
+<?php
+include_once("controller_borrowing.php");
+include_once("controller_book.php");
+include_once("controller_member.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,56 +13,10 @@
 </head>
 
 <style>
-    * {
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    .form-container {
-            margin-top: 50px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .form-group {
-            display: flex;
-            align-items: center;
-        }
-
-        .form-label {
-            width: 100px;
-            font-size: 16px;
-            color: #000;
-        }
-
-        .form-select {
-            width: 250px;
-            padding: 10px 15px;
-            font-size: 16px;
-            border: 2px solid gray;
-            outline: none;
-            appearance: none;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23333" d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
-            background-color: white;
-            cursor: pointer;
-        }
-
-        .select-top {
-            border-bottom: none;
-        }
-
-        .btn-save {
-            margin-top: 20px;
-            color: black;
-            border: 2px solid #333;
-            padding: 10px 45px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
 </style>
 
 <body style="font-family: Arial, sans-serif;">
@@ -89,44 +43,42 @@
             </thead>
             <tbody>
                 <?php foreach ($borrowings as $borrowing) { ?>
-                    <tr style="border-bottom: 1px solid #dee2e6;">
-                        <td style="padding: 15px;"><?= $borrowing->getMember()->getName() ?></td>
-                        <td style="padding: 15px;"><?= $borrowing->getBook()->getTitle() ?></td>
-                    </tr>
+                <tr style="border-bottom: 1px solid #dee2e6;">
+                    <td style="padding: 15px;"><?= $borrowing->getMember()->getName() ?></td>
+                    <td style="padding: 15px;"><?= $borrowing->getBook()->getTitle() ?></td>
+                </tr>
                 <?php } ?>
             </tbody>
         </table>
 
-        <div class="form-container">
-            <form method="POST" action="controller_borrowing.php" style="display: flex; flex-direction: column; align-items: center;">
-                
-                <div style="display: flex; flex-direction: column;">
-                    <!-- Dropdown Member -->
-                    <div class="form-group">
-                        <label class="form-label">Member</label>
-                        <select name="member_index" class="form-select select-top" required>
-                            <option value="" disabled selected>Select Member</option>
-                            <?php foreach ($allMembers as $index => $member) { ?>
-                                <option value="<?= $index ?>"><?= $member->getName() ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
+        <div style="margin-top: 30px; text-align: center;">
+            <form method="POST" action="controller_borrowing.php">
 
-                    <!-- Dropdown Book -->
-                    <div class="form-group">
-                        <label class="form-label">Book</label>
-                        <select name="book_index" class="form-select" required>
-                            <option value="" disabled selected>Select Book</option>
-                            <?php foreach ($allBooks as $index => $book) { ?>
-                                <option value="<?= $index ?>"><?= $book->getTitle() ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
+                <div style="margin-bottom: 10px;">
+                    <label style="display: inline-block; width: 80px;">Member</label>
+                    <select name="member_index" style="width: 250px; padding: 8px; font-size: 16px;" required>
+                        <option value="" disabled selected>Select Member</option>
+                        <?php foreach ($allMembers as $index => $member) { ?>
+                        <option value="<?= $index ?>"><?= $member->getName() ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
 
-                <button type="submit" class="btn-save">SAVE</button>
+                <div style="margin-bottom: 10px;">
+                    <label style="display: inline-block; width: 80px;">Book</label>
+                    <select name="book_index" style="width: 250px; padding: 8px; font-size: 16px;" required>
+                        <option value="" disabled selected>Select Book</option>
+                        <?php foreach ($allBooks as $index => $book) { ?>
+                        <option value="<?= $index ?>"><?= $book->getTitle() ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+
+                <button type="submit"
+                    style="margin-top: 15px; padding: 10px 40px; font-size: 16px; font-weight: bold;">SAVE</button>
             </form>
         </div>
+    </div>
     </div>
 </body>
 

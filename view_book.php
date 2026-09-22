@@ -31,7 +31,7 @@
     <div style="padding: 35px 40px;">
         <h2 style="margin-bottom: 20px;">List of Books</h2>
 
-        <table style="width: 100%; ">
+        <table style="width: 100%;  border-collapse: collapse;">
             <thead>
                 <tr style="background-color: #212529; color: white; text-align: left;">
                     <th style="padding: 12px 15px;">No</th>
