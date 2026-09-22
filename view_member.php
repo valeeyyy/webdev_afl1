@@ -1,4 +1,4 @@
-<?php require("controller_member.php") ?>
+<?php include_once("controller_member.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 

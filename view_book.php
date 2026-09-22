@@ -1,4 +1,4 @@
-<?php require("controller_book.php"); ?>
+<?php include_once("controller_book.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,8 +20,7 @@
         style="width: 100%; background-color: #f5f5f5; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
         <h2 style="color: black;">Library Management</h2>
         <div>
-            <a href="view_member.php"
-                style="color: black; text-decoration: none; margin-right: 35px;">Members</a>
+            <a href="view_member.php" style="color: black; text-decoration: none; margin-right: 35px;">Members</a>
             <a href="view_book.php"
                 style="color: black; text-decoration: none; margin-right: 25px; font-weight: bold">Books</a>
             <a href="view_borrowing.php" style="color: black; text-decoration: none;">Borrowings</a>
@@ -32,7 +31,7 @@
     <div style="padding: 35px 40px;">
         <h2 style="margin-bottom: 20px;">List of Books</h2>
 
-        <table style="width: 100%; border-collapse: collapse;">
+        <table style="width: 100%; ">
             <thead>
                 <tr style="background-color: #212529; color: white; text-align: left;">
                     <th style="padding: 12px 15px;">No</th>

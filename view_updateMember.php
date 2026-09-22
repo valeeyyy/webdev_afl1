@@ -1,6 +1,6 @@
 <?php
 
-require("controller_member.php");
+include_once("controller_member.php");
 
 if (isset($_GET["updateID"])) {
     $member_id = $_GET["updateID"];

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include_once("model_member.php");
 include_once("model_book.php");
@@ -29,15 +29,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['member_index']) && is
     $bookIndex = $_POST['book_index'];
 
     if (isset($allMembers[$memberIndex]) && isset($allBooks[$bookIndex])) {
-        $_SESSION['borrowings'][] = new Borrowing($allMembers[$memberIndex], $allBooks[$bookIndex]);
+        $member = $allMembers[$memberIndex];
+        $book = $allBooks[$bookIndex];
+        $found = false;
+
+        foreach ($_SESSION['borrowings'] as $i => $borrowing) {
+            if ($borrowing->getMember()->getNim() === $member->getNim()) {
+                $_SESSION['borrowings'][$i] = new Borrowing($member, $book); 
+                $found = true;
+                break;
+            }
+        }
+
+        if (!$found) {
+            $_SESSION['borrowings'][] = new Borrowing($member, $book);
+        }
     }
 
-    header("Location: view_borrowing.php");
-    exit();
-}
-
-if (isset($_GET['reset'])) {
-    unset($_SESSION['borrowings']);
     header("Location: view_borrowing.php");
     exit();
 }

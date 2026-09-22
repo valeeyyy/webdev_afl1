@@ -1,6 +1,6 @@
 <?php
 
-require("controller_book.php");
+include_once("controller_book.php");
 
 if (isset($_GET["updateID"])) {
     $book_id = $_GET["updateID"];
