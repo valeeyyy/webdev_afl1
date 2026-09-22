@@ -35,7 +35,7 @@ if (isset($_GET['deleteBorrowingID'])) {
     exit();
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add'])) {
+if (isset($_POST['add'])) {
     $memberIndex = $_POST['member_index'];
     $bookIndex = $_POST['book_index'];
 
