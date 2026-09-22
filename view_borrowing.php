@@ -34,19 +34,22 @@ include_once("controller_member.php");
     <div style="padding: 35px 40px;">
         <h2 style="margin-bottom: 20px;">Borrowings</h2>
 
-        <table style="width: 100%;  border-collapse: collapse;">
+        <table style="width: 100%; border-collapse: collapse;">
             <thead>
                 <tr style="background-color: #212529; color: white; text-align: left;">
                     <th style="padding: 12px 15px;">Member</th>
                     <th style="padding: 12px 15px;">Book</th>
+                    <th style="padding: 12px 15px;">Action</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($borrowings as $index => $borrowing) { ?>
                 <tr style="border-bottom: 1px solid #dee2e6;">
-                    <td style="padding: 15px;"><?= $borrowing->getMember()->getName() ?>
-                    </td>
-                    <td style=" padding: 15px;"><?= $borrowing->getBook()->getTitle() ?>
+                    <td style="padding: 15px;"><?= $borrowing->getMember()->getName() ?></td>
+                    <td style="padding: 15px;"><?= $borrowing->getBook()->getTitle() ?></td>
+                    <td style="padding: 15px;">
+                        <a href="controller_borrowing.php?deleteBorrowingID=<?= $index ?>"
+                            style="background-color: #dc3545; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 6px; display: inline-block;">Delete</a>
                     </td>
                 </tr>
                 <?php } ?>
@@ -78,8 +81,10 @@ include_once("controller_member.php");
             </div>
 
             <button type="submit" name="add"
-                style="margin-top: 15px; padding: 10px 40px; font-size: 16px; font-weight: bold; cursor: pointer;">SAVE</button>
+                style="margin-top: 15px; padding: 10px 40px; font-size: 16px; font-weight: bold;">SAVE</button>
         </form>
     </div>
+
+</body>
 
 </html>

@@ -24,18 +24,15 @@ if (!isset($_SESSION['borrowings'])) {
     }
 }
 
-function getBorrowingID($borrowingID) {
-    return $_SESSION['borrowings'][$borrowingID];
-}
-
-function updateBorrowing($borrowingID, $memberIndex, $bookIndex) {
-    global $allMembers, $allBooks;
-    $_SESSION['borrowings'][$borrowingID] = new Borrowing($allMembers[$memberIndex], $allBooks[$bookIndex]);
-}
-
 function deleteBorrowing($borrowingID) {
     unset($_SESSION['borrowings'][$borrowingID]);
     $_SESSION['borrowings'] = array_values($_SESSION['borrowings']);
+}
+
+if (isset($_GET['deleteBorrowingID'])) {
+    deleteBorrowing($_GET['deleteBorrowingID']);
+    header("Location: view_borrowing.php");
+    exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add'])) {

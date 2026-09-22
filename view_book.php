@@ -48,7 +48,7 @@
                 $allBooks = getAllBooks();
                 foreach ($allBooks as $index => $book) {
                     $counter++;
-                ?>
+                    ?>
                 <tr style="border-bottom: 1px solid #dee2e6;">
                     <td style="padding: 15px;"><?= $counter ?></td>
                     <td style="padding: 15px;"><?= $book->getTitle() ?></td>
