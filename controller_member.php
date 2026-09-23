@@ -18,7 +18,7 @@ function createMember() {
 }
 
 function getAllMembers() {
-    return  $_SESSION['memberlist'];
+    return $_SESSION['memberlist'];
 }
 
 function deleteMember($memberIndex) {
